@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}
+            all hotels 
+{% endblock %}
+
+{% block title %}
+all hotels
+{% endblock %}
+
+{% block content %}
+          <ul>
+            {% for hotel in hotels %}
+            <li>{{ hotel.hotel_name }}</li>
+            {% endfor %}
+          </ul>   
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}
+            customers 
+{% endblock %}
+
+{% block title %}
+customers
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for customer in customers %}
+        <li>{{ customer.customer_name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

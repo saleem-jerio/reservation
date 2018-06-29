@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block pagetitle %}
+            reservations
+{% endblock %}
+
+{% block title %}
+reservations
+{% endblock %}
+
+{% block content %}
+    <ul>
+        {% for reservaiton in reservations %}
+        <li>{{ reservation.hotel_name }}</li>
+        {% endfor %}
+      </ul>   
+{% endblock %}

@@ -6,6 +6,6 @@ urlpatterns = [
     
     url(r"allhotels",AllHotels),
     url(r"allcustomers",AllCustomers),
-    url(r'allreservations',AllReservations)
+    url(r'reservations',AllReservations)
     
 ]

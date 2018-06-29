@@ -9,25 +9,16 @@ from models import *
 # Create your views here.
 
 def AllHotels(request):
-    all_hotels = "<ul>"
-    for hotel in Hotel.objects.all():
-        all_hotels = all_hotels + "<li>" + hotel.hotel_name + "</li>"
-        all_hotels += "</ul>"
 
-    return HttpResponse(all_hotels)
+    return render(request,"reservation/hotels.html",
+                    {"hotels":Hotel.objects.all()})
 
 def AllCustomers(request):
-    all_customers = "<ul>"
-    for customer in Customer.objects.all():
-        all_customers = all_customers + "<li>" + customer.customer_name + "</li>"
-        all_customers += "</ul>"
 
-    return HttpResponse(all_customers)
+    return render(request,"reservation/customers.html",
+                {"customers":Customer.objects.all()})
 
 def AllReservations(request):
-    all_reservations = "<ul>"
-    for reservation in Reservation.objects.all():
-        all_reservations = all_reservations + "<li>"+reservation.hotel.hotel_name + ' ' + reservation.customer.customer_name +"</li>"
-        all_reservations += "</ul>"
 
-    return HttpResponse(all_reservations)
+    return render(request,"reservation/reservation.html",
+                {"reservations":Reservation.objects.all()})
